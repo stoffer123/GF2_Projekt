@@ -1,4 +1,4 @@
-﻿namespace GF2_Projekt
+﻿namespace GF2_Projekt.Opgave
 {
     internal class Program
     {
