@@ -39,7 +39,7 @@ namespace GF2_Projekt.Opgave
             throw new NotImplementedException();
         }
 
-        private void saveUser()
+        private void saveUser(User user)
         {
             throw new NotImplementedException();
         }
