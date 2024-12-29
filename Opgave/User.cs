@@ -9,7 +9,7 @@ namespace GF2_Projekt.Opgave
     public class User
     {
         //get; set; to allow read/write of variables outside of this class.
-        string phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
         string firstName { get; set; }
         string lastName { get; set; }
         int age { get; set; }
