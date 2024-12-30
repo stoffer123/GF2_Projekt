@@ -56,6 +56,7 @@ namespace GF2_Projekt.Opgave
                 //Instantiate the user and add it to the user list.
                 User user = new User(phoneNumber, firstName, lastName, age, address, zipCode, city, email, newsLetterFrequency);
                 users.Add(user);
+                saveUsers();
                 Console.WriteLine("User with was created!");
             }
             else //Else tell the user that the number already exists
