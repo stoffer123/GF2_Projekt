@@ -78,6 +78,35 @@ namespace GF2_Projekt.Opgave
             throw new NotImplementedException();
         }
 
+        public void printUsers(User[] userArray)
+        {
+            int maxUserLines = 12;
+            int startIndex = 0;
+
+            while (startIndex < userArray.Length)
+            {
+                for(int i = startIndex; i < startIndex + maxUserLines && i < userArray.Length; i++)
+                {
+                    User user = userArray[i];
+                    Console.WriteLine($"{user.phoneNumber}{user.firstName},{user.lastName},{user.age},{user.address},{user.zipCode},{user.city},{user.email},{user.newsLetterFrequency}");
+                }
+
+                startIndex += maxUserLines;
+
+                if(startIndex < userArray.Length) //If there is more users to display do this stuff
+                {
+                    Console.WriteLine("Press any key to continue....");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
+
+            //When there is no more users to display the while loop while exit and end here:
+            Console.WriteLine("Last page, press any key to continue...");
+            Console.ReadKey();
+
+        }
+
         private void saveUsers()
         {
             throw new NotImplementedException();
