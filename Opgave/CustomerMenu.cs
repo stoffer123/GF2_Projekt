@@ -37,15 +37,23 @@ namespace GF2_Projekt.Opgave
                         break;
                     case 1:
                         userController.createUser();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 2:
                         userController.findUser();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 3:
                         userController.showAllUsers();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 4:
                         Console.WriteLine($"Gennemsnits alderen for de tilmeldte brugere er: {userController.getAverageAge():N2}");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                 }
 

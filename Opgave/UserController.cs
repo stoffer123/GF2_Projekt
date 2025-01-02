@@ -123,7 +123,7 @@ namespace GF2_Projekt.Opgave
 
             //When there is no more users to display the while loop while exit and end here:
             Console.WriteLine("Last page, press any key to continue...");
-            Console.ReadKey();
+            
 
         }
 
