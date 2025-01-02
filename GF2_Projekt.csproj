@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Diagrams\" />
     <Folder Include="Opgave\UserDatabase\" />
   </ItemGroup>
 
