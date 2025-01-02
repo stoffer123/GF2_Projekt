@@ -22,7 +22,7 @@ namespace GF2_Projekt.Opgave
              * ..\ means to jump back one folder.
              * @ means verbatim string, meaning it reads it literally. /n for example does not create a new line.
              */
-            userDatabasePath = Path.GetFullPath(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv");
+            userDatabasePath = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv"));
             adminPassword = "admin";
         }
 
@@ -79,8 +79,19 @@ namespace GF2_Projekt.Opgave
             {
                 //prompt for phonenumber to search
                 string numberToSearch = getInput("Enter the phonenumber you would like to search for: > ");
+                List<User> matchingUsers = new List<User>();
 
-                //Show matching users
+                foreach(User user in users)
+                {
+                    if(user.phoneNumber.Equals(numberToSearch))
+                    {
+                        matchingUsers.Add(user);
+                    }
+                }
+
+                User[] userArr = matchingUsers.ToArray(); //Array to feed into printUsers
+
+                printUsers(userArr); //Print the matching users.
 
 
             }else //if not authorized do this
