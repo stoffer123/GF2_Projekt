@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace GF2_Projekt.Opgave
 {
     public class UserController
@@ -137,6 +132,20 @@ namespace GF2_Projekt.Opgave
 
         }
 
+        public void showAllUsers()
+        {
+            //Login
+            string input = getInput("Please enter admin password: > ");
+
+            if(input.Equals(adminPassword))
+            {
+                printUsers(users.ToArray());
+            }
+            else
+            {
+                Console.WriteLine("Wrong password, you are not authorized to show all users.");
+            }
+        }
         private void saveUsers()
         {
             throw new NotImplementedException();
