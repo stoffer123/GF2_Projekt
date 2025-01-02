@@ -73,10 +73,22 @@ namespace GF2_Projekt.Opgave
         public void findUser() 
         {
             //Login
+            string input = getInput("Please enter admin password: > ");
 
-            //prompt for phonenumber to search
+            if(input.Equals(adminPassword)) //If authorized do this shit
+            {
+                //prompt for phonenumber to search
+                string numberToSearch = getInput("Enter the phonenumber you would like to search for: > ");
 
-            //Show matching users
+                //Show matching users
+
+
+            }else //if not authorized do this
+            {
+                Console.WriteLine("Wrong password, you are not authorized to Find user.");
+            }
+
+
 
         }
 
