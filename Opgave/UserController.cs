@@ -11,6 +11,7 @@ namespace GF2_Projekt.Opgave
         List<User> users;
         string baseDirectory;
         string userDatabasePath;
+        string adminPassword;
 
         public UserController()
         {
@@ -21,17 +22,85 @@ namespace GF2_Projekt.Opgave
              * ..\ means to jump back one folder.
              * @ means verbatim string, meaning it reads it literally. /n for example does not create a new line.
              */
-            userDatabasePath = Path.GetFullPath(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv");
+            userDatabasePath = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv"));
+            adminPassword = "admin";
         }
 
         public void createUser()
         {
-            throw new NotImplementedException();
+            //Read phonenumber and check if a user with that number already exist.
+            string phoneNumber = getInput("Please enter your phonenumber: > ");
+            bool phoneNumberExists = false;
+
+            foreach (User user in users)
+            {
+                if (phoneNumber == user.phoneNumber)
+                {
+                    phoneNumberExists = true;
+                }
+            }
+
+            //If phoneNumber does not exist on any user, start the creation and ask for the rest of the data.
+            if (!phoneNumberExists)
+            {
+                string firstName = getInput("Please enter your first name: > ");
+                string lastName = getInput("Please enter your last name: > ");
+                int age = getValidatedInt("Please enter your age: > ");
+                string address = getInput("Please enter your address (Street name and number): > ");
+                string zipCode = getInput("Please enter your ZIP Code: > ");
+                string city = getInput("Please enter your city: > ");
+                string email = getInput("Please enter your email: > ");
+
+                //Provide an array of acceptable options for the getValidatedInt method.
+                int newsLetterFrequency = getValidatedInt("Please enter annual frequency of newsletter(1,4,12): > ", new[] {1, 4, 12});
+
+
+                //Instantiate the user and add it to the user list.
+                User user = new User(phoneNumber, firstName, lastName, age, address, zipCode, city, email, newsLetterFrequency);
+                users.Add(user);
+                saveUsers();
+                Console.WriteLine("User with was created!");
+            }
+            else //Else tell the user that the number already exists
+            {
+                Console.WriteLine("PhoneNumber already exist");
+            }
+
+
+
         }
 
-        public User findUser() 
+        public void findUser() 
         {
-            throw new NotImplementedException();
+            //Login
+            string input = getInput("Please enter admin password: > ");
+
+            if(input.Equals(adminPassword)) //If authorized do this shit
+            {
+                //prompt for phonenumber to search
+                string numberToSearch = getInput("Enter the phonenumber you would like to search for: > ");
+                List<User> matchingUsers = new List<User>();
+
+                foreach(User user in users)
+                {
+                    if(user.phoneNumber.Equals(numberToSearch))
+                    {
+                        matchingUsers.Add(user);
+                    }
+                }
+
+                User[] userArr = matchingUsers.ToArray(); //Array to feed into printUsers
+
+                printUsers(userArr); //Print the matching users.
+
+
+            }else //if not authorized do this
+            {
+                Console.WriteLine("Wrong password, you are not authorized to Find user.");
+            }
+
+
+
         }
 
         public List<User> getUsers()
@@ -39,9 +108,37 @@ namespace GF2_Projekt.Opgave
             throw new NotImplementedException();
         }
 
+        public void printUsers(User[] userArray)
+        {
+            int maxUserLines = 12;
+            int startIndex = 0;
+
+            while (startIndex < userArray.Length)
+            {
+                for(int i = startIndex; i < startIndex + maxUserLines && i < userArray.Length; i++)
+                {
+                    User user = userArray[i];
+                    Console.WriteLine($"{user.phoneNumber}{user.firstName},{user.lastName},{user.age},{user.address},{user.zipCode},{user.city},{user.email},{user.newsLetterFrequency}");
+                }
+
+                startIndex += maxUserLines;
+
+                if(startIndex < userArray.Length) //If there is more users to display do this stuff
+                {
+                    Console.WriteLine("Press any key to continue....");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
+
+            //When there is no more users to display the while loop while exit and end here:
+            Console.WriteLine("Last page, press any key to continue...");
+            Console.ReadKey();
+
+        }
+
         private void saveUsers()
         {
-            File.a
             throw new NotImplementedException();
         }
 
@@ -91,6 +188,45 @@ namespace GF2_Projekt.Opgave
         public double getAverageAge()
         {
             throw new NotImplementedException();
+        }
+
+        // Reusable method for string input
+        private string getInput(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine().Trim(); //Trim whitespaces of input and return it.
+        }
+
+        // Method to validate integer input
+        private int getValidatedInt(string prompt, int[] validValues = null) //Int array with default value of null.
+        {
+            //Local variables
+            int value;
+            bool isValid = false;
+
+            do
+            {
+                Console.Write(prompt); //Write the prompt
+                string input = Console.ReadLine().Trim(); //Read the input, trimmed of whitespaces
+
+                if (int.TryParse(input, out value)) //Try to parse the input as int into value, if success return true.
+                {
+                    if (validValues == null || validValues.Contains(value)) //if no validValues array was provided OR value is a valid value
+                    { 
+                        isValid = true;
+                    }else
+                    {
+                        //string.join concatenates all members of the array(second parameter) seperated by the first parameter,in this case ","
+                        Console.WriteLine($"Invalid value. Allowed values: {string.Join(", ", validValues)}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter an integer.");
+                }
+            } while (!isValid);
+
+            return value;
         }
     }
 }
