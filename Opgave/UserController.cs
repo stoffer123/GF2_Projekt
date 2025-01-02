@@ -120,7 +120,7 @@ namespace GF2_Projekt.Opgave
 
                 if(startIndex < userArray.Length) //If there is more users to display do this stuff
                 {
-                    Console.WriteLine("Press any key to continue....");
+                    Console.WriteLine("Press any key to see next page...");
                     Console.ReadKey();
                     Console.Clear();
                 }
