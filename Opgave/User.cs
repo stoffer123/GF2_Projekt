@@ -9,15 +9,15 @@ namespace GF2_Projekt.Opgave
     public class User
     {
         //get; set; to allow read/write of variables outside of this class.
-        string phoneNumber { get; set; }
-        string firstName { get; set; }
-        string lastName { get; set; }
-        int age { get; set; }
-        string address { get; set; }
-        string zipCode { get; set; }
-        string city { get; set; }
-        string email { get; set; }
-        int newsLetterFrequency { get; set; } //At which frequency is a newsLetter wanted, standard values = 12, 4, 1 times a year
+        public string phoneNumber { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public int age { get; set; }
+        public string address { get; set; }
+        public string zipCode { get; set; }
+        public string city { get; set; }
+        public string email { get; set; }
+        public int newsLetterFrequency { get; set; } //At which frequency is a newsLetter wanted, standard values = 12, 4, 1 times a year
 
         public User(string phoneNumber, string firstName, string lastName, int age, string address, string zipCode, string city, string email, int newsLetterFrequency)
         {
