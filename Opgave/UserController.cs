@@ -149,7 +149,25 @@ namespace GF2_Projekt.Opgave
         }
         private void saveUsers()
         {
-            throw new NotImplementedException();
+            string[] csvUsers = new string[users.Count];
+
+            //fyld arrayet med Users i csv format
+            int counter = 0;
+            foreach (User user in users)
+            {
+                csvUsers[counter] = $"{user.phoneNumber},{user.firstName},{user.lastName},{user.age},{user.address},{user.zipCode},{user.city},{user.email},{user.newsLetterFrequency}";
+                counter++;
+            }
+            //Overskriv csv fil.
+            try
+            {
+                File.WriteAllLines(userDatabasePath, csvUsers);
+            }
+            catch (Exception e)
+            {
+                //Catch evt problemer med at skrive til filen, for eksempel at filen er åben i et andet program.
+                Console.WriteLine($"Error saving users to .csv with message: {e}");
+            }
         }
 
         private List<User> loadUsers()
