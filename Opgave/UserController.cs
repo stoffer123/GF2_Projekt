@@ -98,11 +98,6 @@ namespace GF2_Projekt.Opgave
 
         }
 
-        public List<User> getUsers()
-        {
-            throw new NotImplementedException();
-        }
-
         public void printUsers(User[] userArray)
         {
             int maxUserLines = 12;
@@ -215,7 +210,17 @@ namespace GF2_Projekt.Opgave
 
         public double getAverageAge()
         {
-            throw new NotImplementedException();
+            //List for the ages
+            List<int> userAges = new List<int>();
+            
+            //populate list
+            foreach(User user in users)
+            {
+                userAges.Add(user.age);
+            }
+
+            //Return average of values in userAges.
+            return userAges.Average();
         }
 
         // Reusable method for string input
