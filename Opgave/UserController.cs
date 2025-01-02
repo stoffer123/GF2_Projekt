@@ -139,7 +139,8 @@ namespace GF2_Projekt.Opgave
 
             if(input.Equals(adminPassword))
             {
-                printUsers(users.ToArray());
+                User[] userArray = users.ToArray(); //Array of users
+                printUsers(userArray);
             }
             else
             {
