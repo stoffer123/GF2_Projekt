@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace GF2_Projekt.Opgave
 {
     public class UserController
@@ -125,7 +120,7 @@ namespace GF2_Projekt.Opgave
 
                 if(startIndex < userArray.Length) //If there is more users to display do this stuff
                 {
-                    Console.WriteLine("Press any key to continue....");
+                    Console.WriteLine("Press any key to see next page...");
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -137,6 +132,21 @@ namespace GF2_Projekt.Opgave
 
         }
 
+        public void showAllUsers()
+        {
+            //Login
+            string input = getInput("Please enter admin password: > ");
+
+            if(input.Equals(adminPassword))
+            {
+                User[] userArray = users.ToArray(); //Array of users
+                printUsers(userArray);
+            }
+            else
+            {
+                Console.WriteLine("Wrong password, you are not authorized to show all users.");
+            }
+        }
         private void saveUsers()
         {
             throw new NotImplementedException();
