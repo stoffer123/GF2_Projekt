@@ -113,7 +113,7 @@ namespace GF2_Projekt.Opgave
                 for(int i = startIndex; i < startIndex + maxUserLines && i < userArray.Length; i++)
                 {
                     User user = userArray[i];
-                    Console.WriteLine($"{user.phoneNumber}{user.firstName},{user.lastName},{user.age},{user.address},{user.zipCode},{user.city},{user.email},{user.newsLetterFrequency}");
+                    Console.WriteLine($"{user.phoneNumber} - {user.firstName} - {user.lastName} - {user.age} - {user.address} - {user.zipCode} - {user.city} - {user.email} - {user.newsLetterFrequency}");
                 }
 
                 startIndex += maxUserLines;
