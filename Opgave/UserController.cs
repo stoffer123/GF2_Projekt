@@ -11,6 +11,7 @@ namespace GF2_Projekt.Opgave
         List<User> users;
         string baseDirectory;
         string userDatabasePath;
+        string adminPassword;
 
         public UserController()
         {
@@ -22,6 +23,7 @@ namespace GF2_Projekt.Opgave
              * @ means verbatim string, meaning it reads it literally. /n for example does not create a new line.
              */
             userDatabasePath = Path.GetFullPath(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv");
+            adminPassword = "admin";
         }
 
         public void createUser()
@@ -29,9 +31,14 @@ namespace GF2_Projekt.Opgave
             throw new NotImplementedException();
         }
 
-        public User findUser() 
+        public void findUser() 
         {
-            throw new NotImplementedException();
+            //Login
+
+            //prompt for phonenumber to search
+
+            //Show matching users
+
         }
 
         public List<User> getUsers()
