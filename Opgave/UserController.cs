@@ -24,7 +24,7 @@ namespace GF2_Projekt.Opgave
         public void createUser()
         {
             //Read phonenumber and check if a user with that number already exist.
-            string phoneNumber = getInput("Please enter your phonenumber: > ");
+            string phoneNumber = getInput("Indtast dit telefonnummer: > ");
             bool phoneNumberExists = false;
 
             foreach (User user in users)
@@ -38,27 +38,27 @@ namespace GF2_Projekt.Opgave
             //If phoneNumber does not exist on any user, start the creation and ask for the rest of the data.
             if (!phoneNumberExists)
             {
-                string firstName = getInput("Please enter your first name: > ");
-                string lastName = getInput("Please enter your last name: > ");
-                int age = getValidatedInt("Please enter your age: > ");
-                string address = getInput("Please enter your address (Street name and number): > ");
-                string zipCode = getInput("Please enter your ZIP Code: > ");
-                string city = getInput("Please enter your city: > ");
-                string email = getInput("Please enter your email: > ");
+                string firstName = getInput("Indtast dit fornavn: > ");
+                string lastName = getInput("Indtast dit efternavn: > ");
+                int age = getValidatedInt("Indtast din alder: > ");
+                string address = getInput("Indtast din adresse(vej og nummer): > ");
+                string zipCode = getInput("Indtast postnummer: > ");
+                string city = getInput("Indtast by: > ");
+                string email = getInput("Indtast email: > ");
 
                 //Provide an array of acceptable options for the getValidatedInt method.
-                int newsLetterFrequency = getValidatedInt("Please enter annual frequency of newsletter(1,4,12): > ", new[] {1, 4, 12});
+                int newsLetterFrequency = getValidatedInt("Hvor mange gange ønsker du nyhedsbrevet, årligt?(1,4,12): > ", new[] {1, 4, 12});
 
 
                 //Instantiate the user and add it to the user list.
                 User user = new User(phoneNumber, firstName, lastName, age, address, zipCode, city, email, newsLetterFrequency);
                 users.Add(user);
                 saveUsers();
-                Console.WriteLine("User with was created!");
+                Console.WriteLine($"{firstName} {lastName} er blevet tilmeldt nyhedsbrevet!");
             }
             else //Else tell the user that the number already exists
             {
-                Console.WriteLine("PhoneNumber already exist");
+                Console.WriteLine($"En bruger findes allerede med telefonnummer: {phoneNumber}");
             }
 
 
@@ -68,12 +68,12 @@ namespace GF2_Projekt.Opgave
         public void findUser() 
         {
             //Login
-            string input = getInput("Please enter admin password: > ");
+            string input = getInput("Indtast admin password: > ");
 
             if(input.Equals(adminPassword)) //If authorized do this shit
             {
                 //prompt for phonenumber to search
-                string numberToSearch = getInput("Enter the phonenumber you would like to search for: > ");
+                string numberToSearch = getInput("Søg efter telefonnummer: > ");
                 List<User> matchingUsers = new List<User>();
 
                 foreach(User user in users)
@@ -91,7 +91,7 @@ namespace GF2_Projekt.Opgave
 
             }else //if not authorized do this
             {
-                Console.WriteLine("Wrong password, you are not authorized to Find user.");
+                Console.WriteLine("Det indtaste password er forkert! Du har ikke tilladelse til at søge.");
             }
 
 
@@ -115,14 +115,14 @@ namespace GF2_Projekt.Opgave
 
                 if(startIndex < userArray.Length) //If there is more users to display do this stuff
                 {
-                    Console.WriteLine("Press any key to see next page...");
+                    Console.WriteLine("Tryk på en vilkårlig tast for at se næste side...");
                     Console.ReadKey();
                     Console.Clear();
                 }
             }
 
             //When there is no more users to display the while loop while exit and end here:
-            Console.WriteLine("Last page, press any key to continue...");
+            Console.WriteLine("Sidste side, tryk på en vilkårlig tast...");
             
 
         }
@@ -130,7 +130,7 @@ namespace GF2_Projekt.Opgave
         public void showAllUsers()
         {
             //Login
-            string input = getInput("Please enter admin password: > ");
+            string input = getInput("Indtast admin password: > ");
 
             if(input.Equals(adminPassword))
             {
@@ -139,7 +139,7 @@ namespace GF2_Projekt.Opgave
             }
             else
             {
-                Console.WriteLine("Wrong password, you are not authorized to show all users.");
+                Console.WriteLine("Forkert password, du har ikke tilladelse til at se alle brugere!");
             }
         }
         private void saveUsers()
