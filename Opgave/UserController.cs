@@ -10,7 +10,6 @@ namespace GF2_Projekt.Opgave
 
         public UserController()
         {
-            users = loadUsers(); //load users and store the returned list as users
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory; //Sets baseDirectory to the full path of this application.
             /*
              * sets databasePath to be the UserDatabase folder. 
@@ -18,6 +17,7 @@ namespace GF2_Projekt.Opgave
              * @ means verbatim string, meaning it reads it literally. /n for example does not create a new line.
              */
             userDatabasePath = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv"));
+            users = loadUsers(); //load users and store the returned list as users
             adminPassword = "admin";
         }
 

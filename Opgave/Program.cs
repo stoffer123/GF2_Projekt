@@ -8,7 +8,7 @@
             //Test targetDirectory
             Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string targetDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Opgave\UserDatabase"));
+            string targetDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Opgave\UserDatabase\userDB.csv"));
             Console.WriteLine(targetDirectory);
             
             //Test userController
@@ -33,7 +33,7 @@
 
             User[] userArr = new User[] {user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16};
 
-            userController.printUsers(userArr);
+            userController.showAllUsers();
 
             Console.ReadKey();
         }
