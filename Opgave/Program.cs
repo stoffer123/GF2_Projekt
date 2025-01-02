@@ -4,13 +4,9 @@
     {
         static void Main(string[] args)
         {
-
-            //Test userController
-            UserController userController = new UserController();
-
-            userController.showAllUsers();
-
-            Console.ReadKey();
+            
+            CustomerMenu customerMenu = new CustomerMenu(new UserController());
+            customerMenu.run();
         }
     }
 }
