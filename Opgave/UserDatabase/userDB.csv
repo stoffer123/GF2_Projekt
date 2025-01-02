@@ -1,22 +1,21 @@
-+4512345678,Anders,Hansen,34,S�ndergade 10,8000,Aarhus,anders.hansen@example.com,12
-+4523456789,Mette,Jensen,28,Parkvej 12,2100,K�benhavn,�mette.jensen@example.com,4
++4512345678,Anders,Hansen,34,Søndergade 10,8000,Aarhus,anders.hansen@example.com,12
++4523456789,Mette,Jensen,28,Parkvej 12,2100,København, mette.jensen@example.com,4
 +4534567890,Lars,Nielsen,45,Hovedgaden 5,5000,Odense,lars.nielsen@example.com,1
 +4545678901,Anne,Petersen,32,Vestergade 7,6000,Kolding,anne.petersen@example.com,12
-+4556789012,Thomas,Andersen,29,S�ndervang 3,9000,Aalborg,thomas.andersen@example.com,4
++4556789012,Thomas,Andersen,29,Søndervang 3,9000,Aalborg,thomas.andersen@example.com,4
 +4567890123,Sofie,Christensen,26,Strandvejen 15,2900,Hellerup,sofie.christensen@example.com,1
 +4578901234,Henrik,Larsen,39,Nygade 8,4000,Roskilde,henrik.larsen@example.com,12
-+4589012345,Emma,M�ller,24,Gammel Kongevej 20,3000,Helsing�r,emma.moller@example.com,4
-+4590123456,Jesper,Frederiksen,41,Bakkevej 11,4700,N�stved,jesper.frederiksen@example.com,1
-+4501234567,Karen,Olsen,37,Fjordvej 9,3400,Hiller�d,karen.olsen@example.com,12
-+4512345670,Peter,S�rensen,33,Skovvej 6,5000,Odense,peter.sorensen@example.com,4
++4589012345,Emma,Møller,24,Gammel Kongevej 20,3000,Helsingør,emma.moller@example.com,4
++4590123456,Jesper,Frederiksen,41,Bakkevej 11,4700,Næstved,jesper.frederiksen@example.com,1
++4501234567,Karen,Olsen,37,Fjordvej 9,3400,Hillerød,karen.olsen@example.com,12
++4512345670,Peter,Sørensen,33,Skovvej 6,5000,Odense,peter.sorensen@example.com,4
 +4523456701,Lise,Thomsen,27,Engvej 14,7000,Fredericia,lise.thomsen@example.com,1
 +4534567012,Niels,Knudsen,44,Kirkevej 2,8000,Aarhus,niels.knudsen@example.com,12
 +4545670123,Maria,Lund,30,Bredgade 17,6000,Kolding,maria.lund@example.com,4
 +4556701234,Jacob,Rasmussen,38,Langgade 22,9000,Aalborg,jacob.rasmussen@example.com,1
-+4567012345,Ida,Krogh,25,Slotsgade 19,2200,K�benhavn N,ida.krogh@example.com,12
-+4570123456,Christian,Bach,42,Havnevej 16,4500,Nyk�bing Sj.,christian.bach@example.com,4
-+4581234567,Helene,Holm,31,Markvej 21,6400,S�nderborg,helene.holm@example.com,1
-+4592345678,Mikkel,Jeppesen,36,Vesterbrogade 30,1600,K�benhavn V,mikkel.jeppesen@example.com,12
++4567012345,Ida,Krogh,25,Slotsgade 19,2200,København N,ida.krogh@example.com,12
++4570123456,Christian,Bach,42,Havnevej 16,4500,Nykøbing Sj.,christian.bach@example.com,4
++4581234567,Helene,Holm,31,Markvej 21,6400,Sønderborg,helene.holm@example.com,1
++4592345678,Mikkel,Jeppesen,36,Vesterbrogade 30,1600,København V,mikkel.jeppesen@example.com,12
 +4503456789,Susanne,Madsen,28,Borgergade 13,8900,Randers,susanne.madsen@example.com,4
-53760700,Nathalie,Sällberg,30,Dunhammervej 7,3600,Frederikssund,Nathalielyk@hotmail.com,1
-31457796,Christopher,Mikkelsen,29,Dunhammervej 7,3600,Frederikssund,christophermikkelsen@live.dk,12
+31457796,Christopher,Mikkelsen,29,Dunhammervej 7,3600,Frederikssund,ChristopherMikkelsen@live.dk,4

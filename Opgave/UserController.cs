@@ -172,7 +172,7 @@ namespace GF2_Projekt.Opgave
             //If the file exists load the data into tempUsers else create a new .csv file and tell the user no DB was found.
             if (File.Exists(userDatabasePath))
             {
-                string[] lines = File.ReadAllLines(userDatabasePath); //Read all lines of the csv into string array.
+                string[] lines = File.ReadAllLines(userDatabasePath, System.Text.Encoding.UTF8); //Read all lines of the csv into string array.
 
                 //Loop through the line array and instantiate new users to the tempUsers list.
 

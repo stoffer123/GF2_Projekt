@@ -20,8 +20,11 @@ namespace GF2_Projekt.Opgave
 
         public void run()
         {
+
             while(isRunning)
             {
+                
+                logo(); //Intro logo
                 //Print menu
                 Console.WriteLine("Velkommen til CMIS infostander");
                 for(int i = 0; i < menuOptions.Length; i++)
@@ -61,9 +64,17 @@ namespace GF2_Projekt.Opgave
             }
         }
 
-        public void intro()
+        public void logo()
         {
-            throw new NotImplementedException();
+            string logo = "\r\n" +
+                " ██████╗███╗   ███╗██╗███████╗\r\n" +
+                "██╔════╝████╗ ████║██║██╔════╝\r\n" +
+                "██║     ██╔████╔██║██║███████╗\r\n" +
+                "██║     ██║╚██╔╝██║██║╚════██║\r\n" +
+                "╚██████╗██║ ╚═╝ ██║██║███████║\r\n" +
+                " ╚═════╝╚═╝     ╚═╝╚═╝╚══════╝\r\n";
+
+            Console.WriteLine(logo);
         }
 
         public void shutdown()
