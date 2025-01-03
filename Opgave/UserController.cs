@@ -8,7 +8,7 @@ namespace GF2_Projekt.Opgave
         string userDatabasePath;
         string adminPassword;
 
-        public UserController()
+        public UserController() //Constructor, hvad sker der når en instans af denne klasse skabes?
         {
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory; //Sets baseDirectory to the full path of this application.
             /*
