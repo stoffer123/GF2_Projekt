@@ -24,7 +24,7 @@ namespace GF2_Projekt.Opgave
             while(isRunning)
             {
                 
-                logo(); //Intro logo
+                printLogo(); //Intro logo
                 //Print menu
                 Console.WriteLine("Velkommen til CMIS infostander");
                 for(int i = 0; i < menuOptions.Length; i++)
@@ -64,7 +64,7 @@ namespace GF2_Projekt.Opgave
             }
         }
 
-        public void logo()
+        public void printLogo()
         {
             string logo = "\r\n" +
                 " ██████╗███╗   ███╗██╗███████╗\r\n" +
@@ -84,14 +84,7 @@ namespace GF2_Projekt.Opgave
             Console.ReadKey();
         }
 
-
-        private string getInput(string prompt)
-        {
-            Console.Write(prompt);
-            return Console.ReadLine().Trim(); //Trim whitespaces of input and return it.
-        }
-
-        // Method to validate integer input
+        // Method to validate integer input between min and max
         private int getIntInRange(string prompt, int min, int max) 
         {
             //Local variables

@@ -250,12 +250,12 @@ namespace GF2_Projekt.Opgave
                     }else
                     {
                         //string.join concatenates all members of the array(second parameter) seperated by the first parameter,in this case ","
-                        Console.WriteLine($"Invalid value. Allowed values: {string.Join(", ", validValues)}");
+                        Console.WriteLine($"Ugyldig indtastning, gyldige værdier: {string.Join(", ", validValues)}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input. Please enter an integer.");
+                    Console.WriteLine("Ugyldig indtastning! Indtast en integer værdi");
                 }
             } while (!isValid);
 
